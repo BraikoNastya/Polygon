@@ -9,17 +9,14 @@ namespace Polygon
     class Edge
     {
         private Point pointA; 
-        private Point pointB;
-        
+        private Point pointB;       
 
         public Edge(Point pointA, Point pointB)
         {
             this.pointA = pointA;
             this.pointB = pointB;
-
-           
-        }
-        
+                      
+        }        
         public Point PointA
         {
             get { return pointA; }

@@ -9,14 +9,10 @@ namespace Polygon
     class Polygon
     {
         Point[] points;
-        double[] edgeLengthes;
-
-        static int count = 0;
-
+        double[] edgeLengthes;        
+        double area;
         public Polygon(Point[] points)
-        {
-            count++;
-
+        {            
             this.points = points;
 
             edgeLengthes = new double[points.Length];
@@ -34,6 +30,34 @@ namespace Polygon
 
             }
             return perimetr;
+        }
+        public double Area()
+        {
+            double S1 = 0;
+            double S2 = 0;
+            for (int i = 0; i < points.Length; i++)
+            {
+                if (i < points.Length - 1)
+                {
+                    S1 += points[i].GetCoordinateX() * points[i + 1].GetCoordinateY();
+                }
+                else
+                {
+                    S1 += points[i].GetCoordinateX() * points[0].GetCoordinateY();
+                }
+            }
+            for (int i = 0; i < points.Length; i++)
+            {
+                if (i < points.Length - 1)
+                {
+                    S2 += points[i].GetCoordinateY() * points[i + 1].GetCoordinateX();
+                }
+                else
+                {
+                    S2 += points[i].GetCoordinateY() * points[0].GetCoordinateX();
+                }
+            }
+            return area = (S1 - S2) / 2;
         }
     }
 }
