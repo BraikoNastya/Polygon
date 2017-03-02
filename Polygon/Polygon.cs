@@ -31,7 +31,7 @@ namespace Polygon
             }
             return perimetr;
         }
-        public double Area()
+        public double GetArea()
         {
             double S1 = 0;
             double S2 = 0;
